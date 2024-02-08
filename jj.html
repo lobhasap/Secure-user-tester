@@ -18,7 +18,7 @@
     form {
         text-align: center;
     }
-    #redirect {
+    #redirect2 {
         display: inline-block;
         padding: 10px 20px;
         background-color: #f9ca24;
@@ -27,7 +27,7 @@
         border-radius: 5px;
         transition: background-color 0.3s ease;
     }
-    #redirect:hover {
+    #redirect2:hover {
         background-color: #f3b500;
     }
     .cum{
@@ -51,7 +51,9 @@
       if (response) {
         // Redirect to Google.com
         // window.location.href = "pizza.html";
-        document.getElementById("redirect").href="Index.html";
+        document.getElementById("redirect2").href="Index.html";
+        document.getElementById("redirect2").onclick="login()";
+
       }
     };
   </script>
@@ -62,9 +64,12 @@
         <div id="html_element"></div>
         <br>
         <!-- <input type="submit" value="Submit"> -->
-        <a target="_blank" id="redirect">First complete captcha and then redirect</a>
+        <a target="_blank" id="redirect2">First complete captcha and then redirect</a>
       </form>
   </div>
-  <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+  <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
+  </script>
+
+  <script src="t1.js"></script>
 </body>
 </html>
