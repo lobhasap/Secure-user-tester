@@ -47,13 +47,9 @@
     };
 
     var captchaCallback = function(response) {
-      // Check if the captcha is successful
       if (response) {
-        // Redirect to Google.com
-        // window.location.href = "pizza.html";
-        document.getElementById("redirect2").href="Index.html";
-        document.getElementById("redirect2").onclick="login()";
-
+        document.getElementById("redirect2").href = "Index.html";
+        document.getElementById("redirect2").removeAttribute("onclick"); // Remove onclick event after captcha success
       }
     };
   </script>
