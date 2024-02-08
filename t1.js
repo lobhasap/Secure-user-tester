@@ -15,6 +15,7 @@ window.onload = function() {
 function login() {
     let loggedInUsers = JSON.parse(localStorage.getItem('loggedInUsers')) || {};
     let sessionID = generateSessionID();
+    alert("You've been logged in!");
 
     if (Object.keys(loggedInUsers).length > 2) {
         alert("Sorry, maximum number of users logged in. Please try again later.");
