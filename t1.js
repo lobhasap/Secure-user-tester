@@ -16,7 +16,7 @@ function login() {
     let loggedInUsers = JSON.parse(localStorage.getItem('loggedInUsers')) || {};
     let sessionID = generateSessionID();
 
-    if (Object.keys(loggedInUsers).length >= maxLoggedInUsers) {
+    if (Object.keys(loggedInUsers).length > 2) {
         alert("Sorry, maximum number of users logged in. Please try again later.");
         return;
     }
@@ -52,7 +52,7 @@ function setInactivityTimer() {
     clearTimeout(inactivityTimeout);
 
     // Set a timeout for inactivity logout after 2 minutes (120,000 milliseconds)
-    inactivityTimeout = setTimeout(logout, 1200); // 2 minutes
+    inactivityTimeout = setTimeout(logout, 120000); // 2 minutes
 }
 
 function generateSessionID() {
