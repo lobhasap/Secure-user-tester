@@ -1,12 +1,21 @@
 <html>
   <head>
-    <title>reCAPTCHA demo: Explicit render after an onload callback</title>
+    <title>reCAPTCHA demo: Redirect on Success</title>
     <script type="text/javascript">
       var onloadCallback = function() {
         grecaptcha.render('html_element', {
-          'sitekey' : '6LfpeWspAAAAAHI3zUTlXBnmZ04pwTmRN6USJkgG'
+          'sitekey' : '6LfpeWspAAAAAHI3zUTlXBnmZ04pwTmRN6USJkgG',
+          'callback': captchaCallback
         });
-        console.log('');
+      };
+
+      var captchaCallback = function(response) {
+        // Check if the captcha is successful
+        if (response) {
+          // Redirect to Google.com
+        //   window.location.href = "pizza.html";
+        document.getElementById("redirect").href="Final/Index.html";
+        }
       };
     </script>
   </head>
@@ -14,7 +23,8 @@
     <form action="?" method="POST">
       <div id="html_element"></div>
       <br>
-      <input type="submit" value="Submit">
+      <!-- <input type="submit" value="Submit"> -->
+      <a target="_blank" id="redirect">First complete captcha and then redirect</a>
     </form>
     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
         async defer>
